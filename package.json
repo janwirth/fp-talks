@@ -1,0 +1,18 @@
+{
+  "name": "fp-course",
+  "version": "1.0.0",
+  "description": "Inadequate intro to FP",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "nodemon": "^1.19.4",
+    "ramda": "^0.26.1"
+  }
+}
