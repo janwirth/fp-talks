@@ -19,7 +19,8 @@
  * - observable containers
  * - state of Typescript
  *   - composition operators
- *   - pattern matching for recursion and union types
+ *   - pattern matching for recursion and union typeszxvasfasf
+ * - monoids, monads, should not scare you
  * key learnings
  *  - pure functions
  *  - higher-order functions
@@ -29,6 +30,7 @@
  *  - recursion and destructuring
  */
 
+
  /* notes from Anjana Talk
  *   - what is a paradigm: a worldview
  *   - state and time
@@ -37,11 +39,33 @@
  *   - FP = one simple idea = PURE functions
  */
 
+/*
+ * Further Reading
+ * https://www.youtube.com/watch?v=JZSoPZUoR58&t=812s
+ * 
+ */
 
+// A refresher
+function pureVsImpure () {
+    // impure
+    var i = 0;
+    console.log(i)
+    const incrementImpure = () => {
+        i++ // side effect
+    }
+    incrementImpure()
+    console.log(i)
+
+    const incrementPure = n => n + 1
+    console.log(incrementPure(i))
+    console.log(i)
+}
+pureVsImpure()
 
 const _ = require('ramda')
 const promiseTry = require("es6-promise-try");
 async function main() {
+    
     // arrays
     // iterator code and worker code
     // TODO: list iteration example here
@@ -73,7 +97,7 @@ async function main() {
 
     // point-free style
     // notice the unobtrusive inspect-statement
-    _.pipe(squareAll, _.map(inspect), inspect)([1,2,3])
+    _.pipe(squareAll, /*_.map(inspect), inspect */)([1,2,3])
 }
 
 
@@ -90,4 +114,4 @@ function inspect (arg) {
     return arg
 }
 
-main()
+// main()

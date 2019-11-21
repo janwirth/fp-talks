@@ -1,2 +1,4 @@
 # FP for you, you and you!
-See in `index.js`.
+See source code and notes in `index.js`.
+
+
