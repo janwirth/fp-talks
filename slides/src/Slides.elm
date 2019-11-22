@@ -236,6 +236,7 @@ agenda =
             , bullet "Taking off the edge." |> hide
             , bullet "Not 100% accurate, but a useful way of thinking" |> hide
             , bullet "See me fail." |> hide
+            , bullet "VS code live share session" |> hide
             , item (h1 [] [ text "Known Territory" ]) |> hide
             , bullet "Pure Functions" |> hide
             , bullet "Immutable Data" |> hide
