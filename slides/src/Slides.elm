@@ -73,11 +73,16 @@ slides =
     , pureFunctions
     , immutability
     , higherOrderFunctions
+    , currying
     , composition
     , compositionExplained
     , pointFreeStyle
     , monadsAndFunctors
-    -- , furtherReading
+    , idiomaticPromises
+    , tasks
+    , furtherReading
+    , outro
+    , bonus
     ]
         |> List.map paddedSlide
 
@@ -119,7 +124,7 @@ immutabilityMeme = "https://i.redd.it/krvmipkb4re11.jpg"
 higherOrderFunctionMeme = "https://i.imgflip.com/3h3wyv.jpg"
 askForBothMeme = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjHXpKESnsTSnKeLWBJ_E1r12Yxj18ywTbubYAwDuSD9BZbSxW"
 iShouldLearnMeme = "https://framasphere.org/uploads/images/thumb_large_be5b8183dd85ba822c84.jpg"
-gurlUAMonadMeme = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.quora.com%2FWhat-are-some-good-jokes-about-Haskell&psig=AOvVaw1fPk8GwM3Ga6hqTUC5_7EF&ust=1574361030506000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCND7nK-2-eUCFQAAAAAdAAAAABAh"
+gurlUAMonadMeme = "https://qph.fs.quoracdn.net/main-qimg-814f75aadd13c0b23059fa906aa5d226"
 vennDiagramImage = "https://res.infoq.com/presentations/elm-functional-reactive-programming/en/slides/sl11.jpg"
 javascriptEverywhereMeme = "https://miro.medium.com/max/600/1*d5-0BS2qFeuGe0Z9DIObEQ.jpeg"
 liveCodingMistakeMeme = "https://image.slidesharecdn.com/everydayfunctionalprogramminginjavascript-170802030751/95/everyday-functional-programming-in-javascript-15-638.jpg?cb=1501643324"
@@ -134,6 +139,8 @@ compositionMeme = "https://assets.classicfm.com/2018/08/too-hot-to-handel-meme-1
 monadIllustration = "http://adit.io/imgs/functors/monad_nothing.png"
 curryMeme = "https://pics.me.me/curry-haskell-developers-indian-chefs-functional-programming-63423721.png"
 tasksMeme = "https://i.imgflip.com/14xsvu.jpg"
+monadSweatMeme = "monadSweat.gif"
+sideEffectsMeme = "https://www.fluentu.com/blog/english/wp-content/uploads/sites/4/2015/02/9-english-word-pairs-that-confuse-absolutely-everyone-e1423342519671.jpg"
 
 intro =
     [ item (h1 [] [text "Welcome"])
@@ -144,7 +151,7 @@ regularPerson =
     , item (img [ src iShouldLearnMeme] [])
     ]
 usuallyEnemyOfTheState =
-    [ item (h1 [] [text "Me, today, in my spare time"])
+    [ item (h1 [] [text "My true self"])
     , item (img [ src avoidStatesMeme] [])
     ]
 usuallyJason =
@@ -152,7 +159,7 @@ usuallyJason =
     , item (img [ src nightmareOnElmStreet] [])
     ]
 todayPacifist =
-    [ item (h1 [] [text "Just for you"])
+    [ item (h1 [] [text "Today, I am a pacifist"])
     , item (img [ src makeLetNotWarMeme] [])
     ]
 
@@ -170,6 +177,11 @@ immutability =
 higherOrderFunctions =
     [ item (h1 [] [ text "Higher-Order Functions" ])
       , item (img [ src higherOrderFunctionMeme] [])
+  ]
+
+currying =
+    [ item (h1 [] [ text "Currying" ])
+      , item (img [ src curryMeme] [])
   ]
 composition =
     [ item (h1 [] [ text "Composition" ])
@@ -191,17 +203,38 @@ hotReload =
       , item (img [ src pureFunctionRealizationMeme] [])
   ]
 
-jsx =
-    [ item (h1 [] [ text "Further Reading" ])
-      , item (img [ src pureFunctionRealizationMeme] [])
+monadsAndFunctors =
+    [ item (h1 [] [text "Monands and functors"])
+    , item (img [ src monadSweatMeme] [])
+    ]
+
+idiomaticPromises =
+    [ item (h1 [] [text "Await"])
+    , item (img [ src sideEffectsMeme ] [])
+    ]
+
+tasks =
+    [ item (h1 [] [ text "Tasks" ])
+    , item (img [ src tasksMeme] [])
   ]
 
+maybeMonad =
+    [ item (h1 [] [text "Maybe Monad"])
+    , item (img [ src monadIllustration] [])
+    ]
+
+outro =
+    [ item (h1 [] [text "Bye Bye"])
+    , item (img [ src gurlUAMonadMeme] [])
+    ]
 
 agenda =
     [ item (h1 [] [ text "What are we doing?" ])
       , bullets
-            [ bullet "Taking off the edge." |> hide
-            , bullet "Not accurate, but a useful way of thinking" |> hide
+            [ bullet "Not for four full hours." |> hide
+            , bullet "3 years in 1-2hours" |> hide
+            , bullet "Taking off the edge." |> hide
+            , bullet "Not 100% accurate, but a useful way of thinking" |> hide
             , bullet "See me fail." |> hide
             , item (h1 [] [ text "Known Territory" ]) |> hide
             , bullet "Pure Functions" |> hide
@@ -220,7 +253,7 @@ pointFreeStyle =
     ]
 
 furtherReading =
-    [ item (h1 [] [ text "What are we doing?" ])
+    [ item (h1 [] [ text "Want moar?" ])
       , bullets
             [ bullet "https://github.com/lodash/lodash/wiki/FP-Guide"
             , bullet "https://mostly-adequate.gitbooks.io/"
@@ -228,5 +261,10 @@ furtherReading =
             , bullet "tomasp.net/academic/papers/monads/monads-programming.pdf"
             , bullet "http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html"
             , bullet "https://github.com/jorgebucaran/hyperapp"
+            , bullet "https://sanctuary.js.org/"
             ]
       ]
+
+bonus =
+    [ item (h1 [] [ text "Want even moar? (The framework that must not be named)" ])
+    ]
