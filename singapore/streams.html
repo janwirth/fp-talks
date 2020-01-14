@@ -1,0 +1,36 @@
+<html>
+<body>
+    <div>
+    </div>
+</body>
+<script>
+    // pure
+    const view = count => `<h1>events ${count}<h1>`
+    const update = (state, event) => state + 1
+    const initialState = 0
+    const streams = ['click', 'mousemove']
+    init({initialState, view, streams})
+
+
+    // impure framework layer
+    function init({initialState, view, streams}) {
+        var events = []
+
+        const updateView = state => document.querySelector('div').innerHTML = view(state)
+            patch(view, initialState)
+
+        const trackEvent = ev => {
+            events = events.concat([ev])
+            const currentState = events.reduce(update, initialState)
+            patch(view, currentState)
+        }
+        streams.forEach(eventType => document.addEventListener(eventType, trackEvent))
+    }
+
+    function patch (view, state) {
+        document.querySelector('div').innerHTML = view(state)
+    }
+
+    // note the complexities that come with event binding.
+</script>
+</html>

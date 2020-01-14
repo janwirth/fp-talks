@@ -263,6 +263,8 @@ furtherReading =
             , bullet "http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html"
             , bullet "https://github.com/jorgebucaran/hyperapp"
             , bullet "https://sanctuary.js.org/"
+            , bullet "http://ndrgrnd.net/posts/haskellOneSentence.html"
+            , bullet "https://gist.github.com/kana-sama/735549b8baaa783d6fc563e65f3299d5"
             ]
       ]
 
