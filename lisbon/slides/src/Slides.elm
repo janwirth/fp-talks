@@ -265,6 +265,7 @@ furtherReading =
             , bullet "https://sanctuary.js.org/"
             , bullet "http://ndrgrnd.net/posts/haskellOneSentence.html"
             , bullet "https://gist.github.com/kana-sama/735549b8baaa783d6fc563e65f3299d5"
+            , bullet "https://medium.com/@_ericelliott"
             ]
       ]
 
