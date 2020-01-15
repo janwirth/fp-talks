@@ -4,12 +4,17 @@
     </div>
 </body>
 <script>
-    // pure
-    const view = count => `<h1>events ${count}<h1>`
-    const update = (state, event) => state + 1
+    // pure app implementation
+    const view = count => `<button onclick="trackEvent('increment')">events ${count}<button>`
+    const update = (state, event) => {
+        console.log(event)
+        if (event == "increment") {
+            return state + 1
+        }
+    }
     const initialState = 0
-    const streams = ['click', 'mousemove']
-    init({initialState, view, streams})
+    const streams = [] // ['click', 'mousemove']
+    var trackEvent = init({initialState, view, streams})
 
 
     // impure framework layer
@@ -25,6 +30,7 @@
             patch(view, currentState)
         }
         streams.forEach(eventType => document.addEventListener(eventType, trackEvent))
+        return trackEvent
     }
 
     function patch (view, state) {
