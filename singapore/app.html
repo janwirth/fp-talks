@@ -3,7 +3,8 @@
     <div>
     </div>
 </body>
-<script>
+<script type="module">
+    import {map} from './containers.js'
     // pure app implementation
     const view = count => `<button onclick="trackEvent('increment')">events ${count}<button>`
     const update = (state, event) => {
@@ -13,6 +14,8 @@
         }
     }
     const initialState = 0
+
+
     const streams = [] // ['click', 'mousemove']
     var trackEvent = init({initialState, view, streams})
 
